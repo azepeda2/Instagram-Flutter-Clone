@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_clone/utils/colors.dart';
 import 'package:instagram_flutter_clone/utils/global_variable.dart';
-import 'package:instagram_flutter_clone/utils/colors.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
