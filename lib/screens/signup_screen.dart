@@ -5,7 +5,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:instagram_flutter_clone/resources/auth_methods.dart';
 import 'package:instagram_flutter_clone/responsive/mobile_screen_layout.dart';
 import 'package:instagram_flutter_clone/responsive/responsive_layout.dart';
-import 'package:instagram_flutter_clone/responsive/responsive_layout_screen.dart';
 import 'package:instagram_flutter_clone/responsive/web_screen_layout.dart';
 import 'package:instagram_flutter_clone/screens/login_screen.dart';
 import 'package:instagram_flutter_clone/utils/colors.dart';
@@ -14,7 +13,7 @@ import 'package:instagram_flutter_clone/utils/utils.dart';
 import 'package:instagram_flutter_clone/widgets/text_field_input.dart';
 
 class SignupScreen extends StatefulWidget {
-  const SignupScreen({Key key}) : super(key: key);
+  const SignupScreen({Key? key}) : super(key: key);
 
   @override 
   _SignupScreenState createState() => _SignupScreenState();
@@ -118,7 +117,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       backgroundImage: NetworkImage(
                         "https://i.stack.imgur.com/l60Hf.png"),
                         backgroundColor: Colors.red,
-                    )
+                    ),
                   Positioned(
                     bottom: -10,
                     left: 80,
@@ -160,7 +159,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: !_isLoading
                       ? const Text(
                           "Sign Up",
-                        ),
+                        )
                       : const CircularProgressIndicator(
                           color: primaryColor,
                         ),

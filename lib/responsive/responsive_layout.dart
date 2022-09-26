@@ -3,7 +3,7 @@ import 'package:instagram_flutter_clone/providers/user_provider.dart';
 import 'package:instagram_flutter_clone/utils/global_variable.dart';
 import 'package:provider/provider.dart';
 
-class ResponsiveLayout extends StatelessWidget {
+class ResponsiveLayout extends StatefulWidget {
   final Widget webScreenLayout;
   final Widget mobileScreenLayout;
   const ResponsiveLayout({

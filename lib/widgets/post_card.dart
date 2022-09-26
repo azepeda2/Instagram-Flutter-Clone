@@ -23,7 +23,7 @@ class PostCard extends StatefulWidget {
 }
 
 class _PostCardState extends State<PostCard> {
-  int commentLength; = 0;
+  int commentLength = 0;
   bool isLikeAnimating = false;
 
   @override
@@ -64,7 +64,7 @@ class _PostCardState extends State<PostCard> {
 
   @override
   Widget build(BuildContext context) {
-    final model.User user = Provider.of<UserProvider>(context).getUser();
+    final model.User user = Provider.of<UserProvider>(context).getUser;
     final width = MediaQuery.of(context).size.width;
 
 
@@ -235,7 +235,7 @@ class _PostCardState extends State<PostCard> {
                 ),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => CommentScreen(
+                    builder: (context) => CommentsScreen(
                       postId: widget.snap["postId"].toString(),
                     ),
                   ),

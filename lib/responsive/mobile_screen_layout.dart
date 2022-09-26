@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_flutter_clone/utils/colors.dart';
 import 'package:instagram_flutter_clone/utils/global_variable.dart';
 
-class MobileScreenLayout extends StatelessWidget {
+class MobileScreenLayout extends StatefulWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
 
   @override

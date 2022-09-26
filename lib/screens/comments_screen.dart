@@ -20,7 +20,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
   final TextEditingController commentEditingController =
       TextEditingController();
   
-  void postComment(String uid, String name, String profilePic) asynx {
+  void postComment(String uid, String name, String profilePic) async {
     try {
       String res = await FirestoreMethods().postComment(
         widget.postId, 

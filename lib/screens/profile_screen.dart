@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_flutter_clone/providers/user_provider.dart';
 import 'package:instagram_flutter_clone/resources/auth_methods.dart';
 import 'package:instagram_flutter_clone/resources/firestore_methods.dart';
 import 'package:instagram_flutter_clone/screens/login_screen.dart';
@@ -39,8 +37,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     try {
       var userSnap = await FirebaseFirestore.instance
-          .collection("users")
-          .where("uid", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+          .collection('users')
+          .doc(widget.uid)
+          .get();
+
+      // get post lENGTH
+      var postSnap = await FirebaseFirestore.instance
+          .collection('posts')
+          .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
           .get();
 
       postLen = postSnap.docs.length;
@@ -126,7 +130,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               backgroundColor: Colors.white,
                                               textColor: Colors.black,
                                               borderColor: Colors.grey,
-                                              function: () => async {
+                                              function: () async {
                                                 await FirestoreMethods()
                                                     .followUser(
                                                       FirebaseAuth.instance.currentUser!.uid,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Post {
   final String description;
-  final String uuid;
+  final String uid;
   final String username;
   final likes;
   final String postId;

@@ -51,7 +51,7 @@ class AuthMethods {
           following: [],
         );
 
-        await _ _firestore
+        await _firestore
             .collection("users")
             .doc(cred.user!.uid)
             .set(_user.toJson());

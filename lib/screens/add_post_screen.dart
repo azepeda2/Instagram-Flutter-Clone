@@ -57,7 +57,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
             ),
           ],
         );
-      })
+      }
     );
   }
 
@@ -69,7 +69,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
 
     try {
       // uploading to storage and database
-      String res = await FireStoreMethods().uploadPost(
+      String res = await FirestoreMethods().uploadPost(
         _descriptingController.text,
         _file!,
         uid,
@@ -112,7 +112,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
   Widget build(BuildContext context) {
     final UserProvider userProvider = Provider.of<UserProvider>(context);
 
-    return _file = null
+    return _file == null
         ? Center(
           child: IconButton(
             icon: const Icon(

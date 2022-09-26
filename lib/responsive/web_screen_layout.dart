@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_flutter_clone/utils/colors.dart';
 import 'package:instagram_flutter_clone/utils/global_variable.dart';
-import 'package:instagram_flutter_clone/utils/colors.dart';
 
-class WebScreenLayout extends StatelessWidget {
+class WebScreenLayout extends StatefulWidget {
   const WebScreenLayout({Key? key}) : super(key: key);
 
   @override

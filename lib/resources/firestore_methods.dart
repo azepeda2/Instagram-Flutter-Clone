@@ -3,7 +3,6 @@ import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:instagram_flutter_clone/models/post.dart';
 import 'package:instagram_flutter_clone/resources/storage_methods.dart';
-import 'package:instagram_flutter_clone/resources/storage_methods.dart';
 import 'package:uuid/uuid.dart';
 
 class FirestoreMethods {
@@ -119,10 +118,10 @@ class FirestoreMethods {
 
       } else {
         await _firestore.collection("users").doc(followId).update({
-          "followers": FieldView.arrayUnion({uid})
+          "followers": FieldValue.arrayUnion([uid])
         });
 
-        await _firestore.collection("users").doc([uid]).update({
+        await _firestore.collection("users").doc(uid).update({
           "following": FieldValue.arrayUnion([followId])
         });
       }

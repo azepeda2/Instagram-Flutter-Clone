@@ -9,10 +9,10 @@ class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
 
   @override
-  State<ScreenState> createState() => _SearchScreenState();
+  State<SearchScreen> createState() => _SearchScreenState();
 }
 
-class _SearchStateScreen extends State<SearchScreen> {
+class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController searchController = TextEditingController();
   bool isShowUsers = false;
 
@@ -41,7 +41,7 @@ class _SearchStateScreen extends State<SearchScreen> {
                   .collection("users")
                   .where(
                     "username",
-                    isGreaterThanorEqualTo: searchController.text,
+                    isGreaterThanOrEqualTo: searchController.text,
                   )
                   .get(),
               builder: (context, snapshot) {
